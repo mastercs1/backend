@@ -17,7 +17,7 @@ public class DemoApplication {
 	}
 	
 	   /**
-     * Start internal H2 server so we can query the DB from IDE
+     * Start internal H2 server so we can query the DB from IDE//
      *
      * @return H2 Server instance
      * @throws SQLException
