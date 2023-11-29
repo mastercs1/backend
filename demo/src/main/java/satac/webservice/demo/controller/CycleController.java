@@ -14,7 +14,7 @@ import satac.webservice.demo.service.CycleService;
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class CycleController {
 	@Autowired
-	private CycleService cycleService;
+	private CycleService cycleService; 
 	@GetMapping("/santasweb/cycles")
 	public List<Cycle> getCycles() {
 		return cycleService.fetchCycleList();
