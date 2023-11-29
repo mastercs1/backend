@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import satac.webservice.demo.entity.Hero;
 import satac.webservice.demo.repository.HeroRepository;
+
 @Service
 public class HeroServiceImpl implements HeroService {
  
@@ -72,4 +73,8 @@ public class HeroServiceImpl implements HeroService {
 	public Optional<Hero> getHero(long id) {
 		return heroRepository.findById(id);
 	}
+
+
+	
+	 
 }

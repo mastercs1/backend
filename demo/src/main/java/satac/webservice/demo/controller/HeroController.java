@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import satac.webservice.demo.entity.Cycle;
 import satac.webservice.demo.entity.Hero;
+import satac.webservice.demo.service.CycleService;
 import satac.webservice.demo.service.HeroService;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class HeroController {
+
 	@Autowired
 	private HeroService heroService;
 
@@ -47,4 +50,6 @@ public class HeroController {
 		heroService.deleteHeroById(heroId);
 		return "Deleted Successfully";
 	}
+	
+
 }

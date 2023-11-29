@@ -18,3 +18,22 @@ VALUES (5, 'David','Orc','October 15, 1096','Whether united under the leadership
 
 INSERT INTO hero (hero_Id, hero_Name,hero_Race,hero_Dob,description,hire_Price,star_Rating,image_Url) 
 VALUES (6, 'Oshan','Tiefling','October 15, 1103','Tieflings are derived from human bloodlines, and in the broadest possible sense, they still look human. However, their infernal heritage has left a clear imprint on their appearance. Tieflings have large horns that take any of a variety of shapes: some have curling horns like a ram, others have straight and tall horns like a gazelle’s, and some spiral upward like an antelopes’ horns.',27.25,3.1,'assets/images/tiefling.png');
+
+
+INSERT INTO cycle (cycle_id,cycle_code,cycle_name,cycle_status) 
+values(1,'unis2024','undergrade 2024','A');
+
+INSERT INTO cycle (cycle_id,cycle_code,cycle_name,cycle_status) 
+values(2,'unis2023','undergrade 2023','A');
+
+INSERT INTO cycle (cycle_id,cycle_code,cycle_name,cycle_status) 
+values(3,'unis2022','undergrade 2022','H');
+
+INSERT INTO cycle (cycle_id,cycle_code,cycle_name,cycle_status) 
+values(4,'tafe2024','TAFE 2024','A');
+
+INSERT INTO cycle (cycle_id,cycle_code,cycle_name,cycle_status) 
+values(5,'tafe2023','TAFE 2023','A');
+
+INSERT INTO cycle (cycle_id,cycle_code,cycle_name,cycle_status) 
+values(6,'tafe2022','TAFE 2022','H');
