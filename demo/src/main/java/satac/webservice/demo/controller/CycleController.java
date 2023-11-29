@@ -17,6 +17,25 @@ public class CycleController {
 	private CycleService cycleService; 
 	@GetMapping("/santasweb/cycles")
 	public List<Cycle> getCycles() {
+		System.out.println("CycleController.getCycles()");
+		System.out.println("cycleService.fetchCycleList()");
+//		return new ArrayList<Cycle>();
+//		return cycleService.fetchCycleList();
+		System.out.println("cycleService.fetchCycleList()");
+//		return new ArrayList<Cycle>();
+//		return cycleService.fetchCycleList();
+		System.out.println("cycleService.fetchCycleList()");
+//		return new ArrayList<Cycle>();
+//		return cycleService.fetchCycleList();
+		System.out.println("cycleService.fetchCycleList()");
+//		return new ArrayList<Cycle>();
+//		return cycleService.fetchCycleList();
+		System.out.println("cycleService.fetchCycleList()");
+//		return new ArrayList<Cycle>();
+//		return cycleService.fetchCycleList();
+		System.out.println("cycleService.fetchCycleList()");
+//		return new ArrayList<Cycle>();
+//		return cycleService.fetchCycleList();
 		return cycleService.fetchCycleList();
 	}
 }
