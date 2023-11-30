@@ -37,3 +37,19 @@ values(5,'tafe2023','TAFE 2023','A');
 
 INSERT INTO cycle (cycle_id,cycle_code,cycle_name,cycle_status) 
 values(6,'tafe2022','TAFE 2022','H');
+
+
+INSERT INTO applicant (applicant_id,surname,given,reference,dob,course_code,cycle) 
+values(1,'tong','yuxin','123456789','1978-04-19', '10001','Tafe2024');
+
+
+
+
+
+
+
+
+
+
+
+
