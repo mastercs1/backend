@@ -235,14 +235,11 @@ public class ApplicantRepositoryImpl implements ApplicantRepository {
 		    	predicates.add(cb.equal(applicant.get("cycleCode"), cycleCode));
 		    }
 
-
+		    cq.where(predicates.toArray(new Predicate[0]));
 		    TypedQuery<Applicant> typedQuery = em.createQuery(cq);
 		    List<Applicant> resultList = typedQuery.getResultList();
 
-		    // Retrieve the SQL query string
-		   // String queryString = typedQuery.unwrap(org.hibernate.query.Query.class).getQueryString();
-		  
-		    
+		
 		    return resultList;
 	}
 
