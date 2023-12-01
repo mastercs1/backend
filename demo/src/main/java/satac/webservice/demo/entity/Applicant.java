@@ -1,5 +1,7 @@
 package satac.webservice.demo.entity;
 
+import javax.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -14,11 +16,12 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Applicant {
 	@Id
-    private String applicantId;
+    private long applicantId;
 	private String surname;
-	private String given;
+	private String givens;
 	private String reference;
 	private String dob;
+	@Column(name = "course_code")
 	private String courseCode;
 	private String cycle;
 }
