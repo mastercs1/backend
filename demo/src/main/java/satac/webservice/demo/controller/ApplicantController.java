@@ -30,8 +30,8 @@ public class ApplicantController {
 		String reference = applicantInfo.getReference();
 		String dob = applicantInfo.getDob();
 		String courseCode = applicantInfo.getCourseCode();
-		String cycleCode = applicantInfo.getCycleCode();
-		List<Applicant> applicants = applicantService.fetchApplicantList(surname,givens,reference,dob,courseCode,cycleCode);
+		String cycle = applicantInfo.getCycle();
+		List<Applicant> applicants = applicantService.fetchApplicantList(surname,givens,reference,dob,courseCode,cycle);
 		ApplicantResponse response = new ApplicantResponse();
 		response.setApplicants(applicants);
 		return response;

@@ -210,7 +210,7 @@ public class ApplicantRepositoryImpl implements ApplicantRepository {
 
 	@Override
 	public List<Applicant> getApplicantByFilter(String surname, String givens, String reference, String dob,
-			String courseCode, String cycleCode) {
+			String courseCode, String cycle) {
 		     CriteriaBuilder cb = em.getCriteriaBuilder();
 		     CriteriaQuery<Applicant> cq = cb.createQuery(Applicant.class);
 
@@ -231,8 +231,8 @@ public class ApplicantRepositoryImpl implements ApplicantRepository {
 		    if(!Strings.isBlank(courseCode)) {
 		    	predicates.add(cb.equal(applicant.get("courseCode"), courseCode));
 		    }
-		    if(!Strings.isBlank(cycleCode)) {
-		    	predicates.add(cb.equal(applicant.get("cycleCode"), cycleCode));
+		    if(!Strings.isBlank(cycle)) {
+		    	predicates.add(cb.equal(applicant.get("cycle"), cycle));
 		    }
 
 		    cq.where(predicates.toArray(new Predicate[0]));

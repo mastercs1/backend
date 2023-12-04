@@ -23,6 +23,8 @@ public class Applicant {
 	private String dob;
 	@Column(name = "course_code")
 	private String courseCode;
+	
+	
 	private String cycle;
 	
 }
