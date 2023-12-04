@@ -42,6 +42,11 @@ values(6,'tafe2022','TAFE 2022','H');
 INSERT INTO applicant (applicant_id,surname,givens,reference,dob,course_code,cycle) 
 values(1,'tong','yuxin','123456789','1978-04-19', '10001','Tafe2024'); 
 
+INSERT INTO applicant (applicant_id,surname,givens,reference,dob,course_code,cycle) 
+values(2,'Feng','Bo','987654321','1978-04-19', '10002','unis2024'); 
+
+INSERT INTO applicant (applicant_id,surname,givens,reference,dob,course_code,cycle) 
+values(3,'Starkey','David','111111111','1978-04-19', '10003','Tafe2022'); 
 
 
 

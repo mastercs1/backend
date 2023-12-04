@@ -10,10 +10,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Data
 public class Applicant {
 	@Id
     private long applicantId;
@@ -24,4 +24,5 @@ public class Applicant {
 	@Column(name = "course_code")
 	private String courseCode;
 	private String cycle;
+	
 }

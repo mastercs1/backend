@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import satac.webservice.demo.entity.Applicant;
+import satac.webservice.demo.model.request.ApplicantInfo;
+import satac.webservice.demo.model.response.ApplicantResponse;
 import satac.webservice.demo.service.ApplicantService;
 
 @RestController
@@ -19,23 +21,21 @@ public class ApplicantController {
 	private ApplicantService applicantService; 
 	
 	@PostMapping("/santasweb/applicants")
-	public List<Applicant> getApplicants(
-			    @RequestParam(required = false) String surname,
-	            @RequestParam(required = false) String givens,
-	            @RequestParam(required = false) String reference,
-	            @RequestParam(required = false) String dob,
-	            @RequestParam(required = false) String courseCode,
-	            @RequestParam(required = false) String cycleCode
-			
+	@ResponseBody
+	public ApplicantResponse getApplicants(
+			@RequestBody ApplicantInfo applicantInfo
 			) {
-		List<Applicant> list = applicantService.fetchApplicantList(surname,givens,reference,dob,courseCode,cycleCode);
-//		for (Applicant app :list ) {
-//			System.out.println(app.getApplicantId());
-//			System.out.println(app.getReference());
-//			
-//		}
-//		
-		return applicantService.fetchApplicantList(surname,givens,reference,dob,courseCode,cycleCode);
+		String surname = applicantInfo.getSurname();
+		String givens = applicantInfo.getGiven();
+		String reference = applicantInfo.getReference();
+		String dob = applicantInfo.getDob();
+		String courseCode = applicantInfo.getCourseCode();
+		String cycleCode = applicantInfo.getCycleCode();
+		List<Applicant> applicants = applicantService.fetchApplicantList(surname,givens,reference,dob,courseCode,cycleCode);
+		ApplicantResponse response = new ApplicantResponse();
+		response.setApplicants(applicants);
+		return response;
+
 	}
 
 }
