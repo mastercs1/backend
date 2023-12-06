@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -21,6 +22,8 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
 import satac.webservice.demo.entity.Applicant;
+import satac.webservice.demo.entity.Note;
+import satac.webservice.demo.service.NoteServiceImpl;
 
 @Repository
 public class ApplicantRepositoryImpl implements ApplicantRepository {
@@ -28,6 +31,9 @@ public class ApplicantRepositoryImpl implements ApplicantRepository {
 	@Autowired
     EntityManager em;
     
+	@Autowired
+	NoteServiceImpl noteService;
+	
 	@Override
 	public void flush() {
 		// TODO Auto-generated method stub
@@ -238,6 +244,13 @@ public class ApplicantRepositoryImpl implements ApplicantRepository {
 		    cq.where(predicates.toArray(new Predicate[0]));
 		    TypedQuery<Applicant> typedQuery = em.createQuery(cq);
 		    List<Applicant> resultList = typedQuery.getResultList();
+		  
+		    if(!CollectionUtils.isEmpty(resultList)) {
+		    	for (Applicant app: resultList) {
+		    		List<Note> notes = noteService.getNoteByApplicantId(app.getApplicantId());
+		    		app.setNoteNumber(notes.size());
+		    	}
+		    }
 
 		
 		    return resultList;

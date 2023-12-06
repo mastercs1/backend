@@ -4,6 +4,7 @@ import javax.persistence.Column;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,8 +24,8 @@ public class Applicant {
 	private String dob;
 	@Column(name = "course_code")
 	private String courseCode;
-	
-	
 	private String cycle;
-	
+
+	@Transient
+    private int noteNumber; // Transient field
 }
